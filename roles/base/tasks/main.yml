@@ -1,0 +1,35 @@
+---
+- name: Update apt package index
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+  tags:
+    - base
+
+- name: Upgrade installed packages
+  ansible.builtin.apt:
+    upgrade: safe
+  tags:
+    - base
+
+- name: Install basic utilities and Fail2ban
+  ansible.builtin.apt:
+    name:
+      - curl
+      - wget
+      - git
+      - unzip
+      - tar
+      - ufw
+      - fail2ban
+    state: present
+  tags:
+    - base
+
+- name: Enable and start Fail2ban
+  ansible.builtin.service:
+    name: fail2ban
+    state: started
+    enabled: true
+  tags:
+    - base

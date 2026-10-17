@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansible Deployed Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 24px;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2563eb;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <span class="badge">Deployed with Ansible</span>
+        <h1>It works!</h1>
+        <p>This static website was deployed automatically using an Ansible playbook.</p>
+        <p>Managed with roles: base, nginx, app, and ssh.</p>
+    </main>
+</body>
+</html>
